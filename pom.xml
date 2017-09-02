@@ -1,0 +1,368 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.druck.pay</groupId>
+	<artifactId>druck-pay</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>druck-pay</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework.version>3.2.4.RELEASE</org.springframework.version>
+		<druck-pay-common.version>0.0.1-SNAPSHOT</druck-pay-common.version>
+		<druck-pay-service-merchant-api.version>0.0.1-SNAPSHOT</druck-pay-service-merchant-api.version>
+		<druck-pay-service-merchant.version>0.0.1-SNAPSHOT</druck-pay-service-merchant.version>
+		<druck-pay-service-trade-api.version>0.0.1-SNAPSHOT</druck-pay-service-trade-api.version>
+		<druck-pay-service-trade.version>0.0.1-SNAPSHOT</druck-pay-service-trade.version>
+		<druck-pay-service-message-api.version>0.0.1-SNAPSHOT</druck-pay-service-message-api.version>
+		<druck-pay-service-message.version>0.0.1-SNAPSHOT</druck-pay-service-message.version>
+		<druck-pay-service-accounting-api.version>0.0.1-SNAPSHOT</druck-pay-service-accounting-api.version>
+		<druck-pay-service-accounting.version>0.0.1-SNAPSHOT</druck-pay-service-accounting.version>
+		<druck-pay-service-account-api.version>0.0.1-SNAPSHOT</druck-pay-service-account-api.version>
+		<druck-pay-service-account.version>0.0.1-SNAPSHOT</druck-pay-service-account.version>
+		<druck-pay-service-point-api.version>0.0.1-SNAPSHOT</druck-pay-service-point-api.version>
+		<druck-pay-service-point.version>0.0.1-SNAPSHOT</druck-pay-service-point.version>
+		<tcc.version>1.1.5</tcc.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.7</version>
+				<scope>test</scope>
+			</dependency>
+			<!-- servlet -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>2.2.1-b03</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- log4j -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.17</version>
+			</dependency>
+			<!-- jstl -->
+			<dependency>
+				<groupId>jstl</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+
+			<!-- Spring Dependency Begin -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>1.7.3</version>
+			</dependency>
+			<dependency>
+				<groupId>aopalliance</groupId>
+				<artifactId>aopalliance</artifactId>
+				<version>1.0</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<!-- Spring Dependency End -->
+
+			<!-- jackson -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<version>1.9.11</version>
+			</dependency>
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>1.9.11</version>
+			</dependency>
+			<!-- fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.1.41</version>
+			</dependency>
+
+			<!-- Fileupload Dependency Start -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>1.3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.0.1</version>
+			</dependency>
+			<!-- Fileupload Dependency End -->
+
+			<!-- hibernate4 -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>4.1.7.Final</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+				<version>3.5.6-Final</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.hibernate</groupId>
+						<artifactId>hibernate-commons-annotations</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- MD5加密 -->
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>20041127.091804</version>
+			</dependency>
+
+			<!-- Mysql Driver Begin -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.32</version>
+			</dependency>
+			<!-- Mysql Driver End -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>1.0.12</version>
+			</dependency>
+
+			<!-- dubbo -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>2.5.3</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- Zookeeper 用于分布式服务管理 -->
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>3.4.5</version>
+			</dependency>
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>0.3</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.netty</groupId>
+				<artifactId>netty</artifactId>
+				<version>3.2.5.Final</version>
+			</dependency>
+			<!-- Zookeeper 用于分布式服务管理 end -->
+
+			<!-- Activemq Strat -->
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-all</artifactId>
+				<version>5.11.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.activemq</groupId>
+				<artifactId>activemq-pool</artifactId>
+				<version>5.11.1</version>
+			</dependency>
+			<!-- Activemq End -->
+
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-common</artifactId>
+				<version>${druck-pay-common.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-merchant-api</artifactId>
+				<version>${druck-pay-service-merchant-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-merchant</artifactId>
+				<version>${druck-pay-service-merchant.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-trade-api</artifactId>
+				<version>${druck-pay-service-trade-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-trade</artifactId>
+				<version>${druck-pay-service-trade.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-message-api</artifactId>
+				<version>${druck-pay-service-message-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-message</artifactId>
+				<version>${druck-pay-service-message.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-accounting-api</artifactId>
+				<version>${druck-pay-service-accounting-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-accounting</artifactId>
+				<version>${druck-pay-service-accounting.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-account-api</artifactId>
+				<version>${druck-pay-service-account-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-account</artifactId>
+				<version>${druck-pay-service-account.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-point-api</artifactId>
+				<version>${druck-pay-service-point-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.druck.pay</groupId>
+				<artifactId>druck-pay-service-point</artifactId>
+				<version>${druck-pay-service-point.version}</version>
+			</dependency>
+
+			<!-- tcc-transaction begin -->
+			<dependency>
+				<groupId>org.mengyun</groupId>
+				<artifactId>tcc-transaction-api</artifactId>
+				<version>${tcc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mengyun</groupId>
+				<artifactId>tcc-transaction-core</artifactId>
+				<version>${tcc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mengyun</groupId>
+				<artifactId>tcc-transaction-spring</artifactId>
+				<version>${tcc.version}</version>
+			</dependency>
+			<!-- tcc-transaction end -->
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<finalName>druck-pay</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
